@@ -4,6 +4,24 @@
     box-sizing: border-box;
 }
 
+.body{
+    font-family: Arial, sans-serif;
+}
+
+p{
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    font-family: poppins,'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+h3{
+    font-family: poppins,'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -79,7 +97,9 @@
     display: flex;
     padding: 10px;
     justify-content: space-between;
-    gap: 1.5rem;
+    text-align: center;
+    gap: 1rem;
+    width: 100%;
 }
 
 .containerB p{
@@ -143,13 +163,31 @@
 
 .story-section{
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    align-items: center;
+    gap: 1.5rem;
     background-color: chartreuse;
+    width: 100%;
+    padding: 10px;
 }
 
 .story-image{
-    
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.story-content{
+    max-width: 50%;
+    text-align: left;
+}
+
+.story-content p{
+    font-size: 1rem;
+}
+
+.story-content h3{
+    font-size: 3rem;
 }
 
 .section2{
@@ -159,6 +197,65 @@
 .menu-section{
     background-color: aquamarine;
 }
+
+.story-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.item-number{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.item-desc{
+    font-size: 1rem;
+    color: black;
+}
+
+.why-seciton{
+    width: 100%;
+}
+
+.why-header{
+    width: 100%;
+    background-color: antiquewhite;
+    color: green;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.why-content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.info-box{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+.icon-ws{
+    background-color: brown;
+    border-radius: 10%;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 10px;
+}
+
+.menu-section{
+    background-color: aquamarine;
+    padding: 10px;
+}
+
+
 .gallery-container{
     
 }
