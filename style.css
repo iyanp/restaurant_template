@@ -22,7 +22,7 @@ h3{
     font-style: italic;
 }
 
-.navbar {
+.main-navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,23 +35,23 @@ h3{
     font-weight: bold;
 }
 
-.nav-links {
+.main-nav-links {
     display: flex;
     list-style: none;
     gap: 30px;
 }
 
-.nav-links a {
+.main-nav-links a {
     color: blue;
     text-decoration: none;
     font-size: 16px;
 }
 
-.nav-links a:hover {
+.main-nav-links a:hover {
     color: aqua;
 }
 
-.nav-button{
+.main-nav-button{
     font-size: large;
     font-weight: bold;
 }
@@ -196,6 +196,7 @@ h3{
 
 .menu-section{
     background-color: aquamarine;
+    padding: 2rem;
 }
 
 .story-item{
@@ -215,13 +216,15 @@ h3{
     color: black;
 }
 
-.why-seciton{
+/** This one is typo, correct is section not seciton**/
+.why-section{
     width: 100%;
 }
 
-.why-header{
+
+/** for section headed **/
+.section-header{
     width: 100%;
-    background-color: antiquewhite;
     color: green;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
@@ -232,13 +235,14 @@ h3{
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     width: 100%;
+    padding: 1.5rem;
 }
 
 .info-box{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
     text-align: left;
-    padding: 10px;
+    padding: 1rem;
     background-color: lightgray;
 }
 
@@ -250,11 +254,124 @@ h3{
     padding: 10px;
 }
 
-.menu-section{
-    background-color: aquamarine;
-    padding: 10px;
+.menu-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
+.filter-nav{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    background-color: #f9f9f9;
+    color:aquamarine;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background-color: aquamarine;
+    color: #fff;
+    border-color: red;
+}
+
+.menu-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.menu-item{
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflox: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: rows;
+}
+
+.menu-item.hide{
+    display: none !important;
+}
+
+.menu-item:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item img{
+    width: 25%;
+    height: 150px;
+    padding: 0.5rem;
+    border-radius: 30px;
+}
+
+.menu-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    padding: 0 1rem;
+}
+
+.rate-tab{
+    max-width: 500px;
+    margin: 2rem auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-tab{
+    display: none;
+    text-align: center;
+}
+
+.content-tab.active{
+    display: block;
+}
+
+.tab-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.tab-btn{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: lightcoral;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover{
+    background-color: #ccc;
+}
+
+.tab-btn:active{
+    background-color: brown;
+    width: 28px;
+    border-radius: 10px;
+}
+
+.contact-section{
+    background-color: pink;
+}
 
 .gallery-container{
     

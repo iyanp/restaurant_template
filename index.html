@@ -8,12 +8,12 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="main-navbar">
         <div class="logo">
             Kawa at Kalan
         </div>
 
-        <ul class="nav-links">
+        <ul class="main-nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#menu">Menu</a></li>
@@ -21,7 +21,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <div class="nav-button">
+        <div class="main-nav-button">
             Reserve a table
         </div>
     </nav>
@@ -115,7 +115,7 @@
         </div>
 
         <div class="home-section why-section">
-            <div class="why-header">
+            <div class="section-header"> 
                 <p>Bakit sa Kawa at Kalan?</p>
                 <h3>Higit pa sa simpleng kainan.</h3>
                 <p>May malasakit at aruga sa bawat lutuin &mdash; mula sa pamilihan hanggang sa inyong plato.</p>
@@ -168,12 +168,82 @@
         </div>
 
         <div class="home-section menu-section">
-            <p>Ang Aming Menyu</p>
-            <h3>Sulyap sa Bawat Lasa ng Tradisyon.</h3>
 
+            <!-- Put div container class= section-header -->
+            <div class="section-header">
+                <p>Ang Aming Menyu</p>
+                <h3>Sulyap sa Bawat Lasa ng Tradisyon.</h3>
+
+            </div>
+
+            <div class="menu-container">
+                <div class="filter-nav">
+                    <button class="filter-btn active" data-filter="all">Lahat</button>
+                    <button class="filter-btn" data-filter="appetizers">Pang-umpisa</button>
+                    <button class="filter-btn" data-filter="main-course">Pangunahing Ulam</button>
+                    <button class="filter-btn" data-filter="desserts">Panghimagas</button>
+                    <button class="filter-btn" data-filter="beverages">Inumin</button>
+                </div>
+            </div>
+
+            <div class="menu-grid" id="menuGrid"></div>
+        </div>
+
+        <div class="home-section rating-section">
+            <div class="section-header">
+                <p>Ano ano ang sabi nila</p>
+                <h1>Walang kanin busseng!.</h3>
+            </div>
+
+            <div class="rate-tab">
+                <div class="content-wrapper">
+                    <div class="content-tab active" data-index="1">
+                        <p>Star star star</p>
+                        <h1>"Dameng dame namen nag babaya ng unli rice!"</h1>
+                        <img src="img/pic.webp">
+                        <p>Bisayang gutom</p>
+                        <p>first time guest</p>
+                    </div>
+
+                    <div class="content-tab" data-index="2">
+                        <p>Star star star</p>
+                        <h1>"Sinong nag prito ng manok?!"</h1>
+                        <img src="img/pic.webp">
+                        <p>Manong na nasarapan sa manok</p>
+                        <p>first time guest</p>
+                    </div>
+
+                    <div class="content-tab" data-index="3">
+                        <p>Star star</p>
+                        <h1>"Asim kilig!"</h1>
+                        <img src="img/pic.webp">
+                        <p>Commercial.</p>
+                        <p>first time guest</p>
+                </div>
+            </div>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-target="1" aria-label="Go to review 1"></button>
+                <button class="tab-btn" data-target="2" aria-label="Go to review 2"></button>
+                <button class="tab-btn" data-target="3" aria-label="Go to review 3"></button>
+            </div>
+        </div>
+
+        <div class="home-section contact-section">
+            <div class="section-header">
+                <p>Handa Ka na bang Bisitahin Kami?</p>
+                <h1>Inaabangan Ka na ng Aming Hapag</h1>
+                <p>Mag-reserba na ng inyong mesa ngayon. Mabilis mapuno ang aming pwesto tuwing katapusan ng linggo — ayaw naming umuwi kayong hindi busog.</p>
+            </div>
+
+            <div class="button-wrapper">
+                <button>Mag-reserba ng mesa</button>
+                <button>tumawag sa numero : 0962 *** ****</button>               
+            </div>
         </div>
 
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
 
