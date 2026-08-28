@@ -2,10 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
-.body{
-    font-family: Arial, sans-serif;
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 p{
@@ -22,33 +25,26 @@ h3{
     font-style: italic;
 }
 
-.main-navbar {
+/**Edit**/
+.site-header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
+}
+
+.main-navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.main-navbar :hover{
+    color: aqua;
 }
 
 .logo {
     color: black;
     font-size: 24px;
     font-weight: bold;
-}
-
-.main-nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.main-nav-links a {
-    color: blue;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.main-nav-links a:hover {
-    color: aqua;
 }
 
 .main-nav-button{
@@ -188,10 +184,6 @@ h3{
 
 .story-content h3{
     font-size: 3rem;
-}
-
-.section2{
-    background-color: chocolate;
 }
 
 .menu-section{
@@ -371,6 +363,13 @@ h3{
 
 .contact-section{
     background-color: pink;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
 }
 
 .gallery-container{
