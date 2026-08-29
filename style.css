@@ -61,6 +61,7 @@ h3{
 }
 
 .home-section{
+    min-height: 500px;
     background-color: antiquewhite;
     width: 100%;
 }
@@ -69,9 +70,10 @@ h3{
     background-color: aqua;
 }
 
-.home-sectionA{
+.intro-section{
     width: 100%;
     background-color: pink;
+    align-items: center;
 }
 
 .containerA {
@@ -316,7 +318,7 @@ h3{
 }
 
 .rate-tab{
-    max-width: 500px;
+    width: 80%;
     margin: 2rem auto;
     border: 1px solid #ccc;
     border-radius: 8px;
