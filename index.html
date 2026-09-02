@@ -9,19 +9,27 @@
 
 <body>
     <header class="site-header">
-        <a href="" class="logo">Kawa at Kalan</a>
+        <div class="header-container">
+            <a href="" class="logo">Kawa at Kalan</a>
 
-        <nav class="main-navbar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="main-nav-button"> Reserve a table</div>
+            <!-- Mobile toggle button-->
+            <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
 
+            <nav class="main-navbar">
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="#home">Home</a></li>
+                    <li><a class="nav-link" href="about.html">About</a></li>
+                    <li><a class="nav-link" href="#menu">Menu</a></li>
+                    <li><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="main-nav-button">Reserve a table</div>
+            </nav>
+
+            
+        </div>
         <script src="script.js" defer></script>
     </header>
 
@@ -48,6 +56,7 @@
 
         <!-- Conainer 2-->
         <div class="home-section gallery-section">
+            <!--Change this content-->
             <div class="gallery-header">
                 <p class="para-top-sectionB">Ang aming Espesyalidad.</p>
                 <h1 class="heading-sectionB">Mga Inirerekomenda ng Kusina.</h1>
