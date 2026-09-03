@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Design Template</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ee68c047e7.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -14,7 +15,9 @@
 
             <!-- Mobile toggle button-->
             <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
+                <span class="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </span>
             </button>
 
             <nav class="main-navbar">
@@ -36,6 +39,7 @@
     <main id="home" class="section home-section">
         <!-- Conainer 1-->
         <div class="home-section intro-section">
+
             <div class="containerA">
                 <p>Maki-salo sa aming kusina! &mdash; Kawa at Kalan</p>
                 <h1>Init ng Apoy, Linamnam ng Tradisyon.</h1>
@@ -136,10 +140,7 @@
             <div class="why-content">
                 <div class="info-box">
                     <div class="icon">
-                        <svg class="icon-ws" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf-icon lucide-leaf">
-                            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
-                            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
-                        </svg>
+                        <span class="icon-container"><i class="fa-solid fa-leaf fa-2xl" style="color: rgb(0, 0, 0);"></i></span>
                     </div>
 
                     <h1>Sariwa Mula sa Bukid</h1>
@@ -147,10 +148,7 @@
                 </div>
                 <div class="info-box">
                     <div class="icon">
-                        <svg class="icon-ws" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cooking-pot-icon lucide-cooking-pot">
-                            <path d="M2 12h20"/><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/>
-                            <path d="m4 8 16-4"/><path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8"/>
-                        </svg>
+                        <span class="icon-container"><i class="fa-solid fa-fire fa-2xl" style="color: rgb(0, 0, 0);"></i></span>
                     </div>
 
                     <h1>Tradisyunal na Pagluluto</h1>
@@ -158,9 +156,7 @@
                 </div>
                 <div class="info-box">
                     <div class="icon">
-                        <svg class="icon-ws" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand-platter-icon lucide-hand-platter"><path d="M12 3V2"/><path d="m15.4 17.4 3.2-2.8a2 2 0 1 1 2.8 2.9l-3.6 3.3c-.7.8-1.7 1.2-2.8 1.2h-4c-1.1 0-2.1-.4-2.8-1.2l-1.302-1.464A1 1 0 0 0 6.151 19H5"/><path d="M2 14h12a2 2 0 0 1 0 4h-2"/>
-                            <path d="M4 10h16"/>
-                            <path d="M5 10a7 7 0 0 1 14 0"/><path d="M5 14v6a1 1 0 0 1-1 1H2"/></svg>
+                       <span><i class="fa-solid fa-bell-concierge fa-2xl" style="color: rgb(0, 0, 0);"></i></span>
                     </div>
 
                     <h1>Serbisyong Tulad ng sa Pamilya</h1>
@@ -168,10 +164,7 @@
                 </div>
                 <div class="info-box">
                     <div class="icon">
-                        <svg class="icon-ws" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <title xmlns="">scooter-delivery</title>
-                            <path fill="currentColor" d="M20.26 15.47s-.06-.04-.1-.05c-.4-.22-.84-.32-1.29-.37L17.79 8h1.22c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1h-1.89c-.41-1.19-1.53-2-2.83-2h-2.28v2h2.28a1 1 0 0 1 .99.85l1.62 10.54c-.46.24-.87.57-1.19 1c-.14.19-.25.39-.36.6H13V7c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h.03C2.4 12.84 2 13.87 2 15v3c0 .55.45 1 1 1h1.05c.25 1.69 1.69 3 3.45 3s3.2-1.31 3.45-3h4.1c.25 1.69 1.69 3 3.45 3c1.93 0 3.5-1.57 3.5-3.5c0-1.24-.67-2.4-1.74-3.03M4 8h7v2H4zm3.5 12a1.498 1.498 0 0 1-1.47-1.79c.05-.23.14-.45.27-.61c.11-.15.25-.26.4-.36c0 0 .01 0 .02-.01c.3-.18.65-.25.99-.21h.07c.16.03.32.08.47.16l.06.03c.35.23.59.57.67.96c.02.1.03.21.03.31c0 .83-.67 1.5-1.5 1.5Zm3.5-3h-.34a3 3 0 0 0-.3-.5c-.03-.04-.06-.07-.08-.11c-.11-.14-.23-.28-.36-.4c-.04-.04-.09-.08-.13-.12c-.17-.15-.34-.28-.54-.4a.5.5 0 0 0-.1-.05c-.5-.27-1.07-.42-1.66-.42c-1.11 0-2.13.51-2.79 1.38c-.15.19-.27.39-.38.62h-.34v-2c0-1.65 1.35-3 3-3h4v5Zm7.5 3a1.498 1.498 0 0 1-1.2-2.4a1.506 1.506 0 0 1 1.94-.41a1.53 1.53 0 0 1 .77 1.31c0 .83-.67 1.5-1.5 1.5Z"/>
-                        </svg>
+                        scooter / delivery
                     </div>
 
                     <h1>Mainit Hanggang sa Inyong Pintuan</h1>

@@ -7,6 +7,15 @@ navToggle.addEventListener('click', () => {
     navToggle.setAttribute('aria-expanded', isOpen);
 });
 
+let resizeTimer;
+window.addEventListener('resize', () => {
+    document.body.classList.add('resize-animation-stopper');
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        document.body.classList.remove('resize-animation-stopper');
+    }, 300);
+});                
+
 const menuData = [
     {id: 1, name: "Adobo", category: "main-course", price: 150, image: "imgs/filipino-adobo.webp", description: "Mga hiwa ng manok na pinalambot sa pinaghalong suka, toyo, maraming bawang, paminta, at dahon ng laurel. Dahan-dahang iniluluto sa mahinang apoy hanggang sa kumapit at magmamantika ang masarap na sarsa."},
     {id: 2, name: "Sinigang", category: "main-course", price: 180, image: "imgs/sinigang.webp", description: "Malalambot na hiwa ng kasim o liempo ng baboy na nakalubog sa maasim at mainit na sabaw ng sampalok. May kasamang mga sariwang gulay tulad ng kangkong, labanos, sitaw, talong, at siling haba."},
