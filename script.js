@@ -14,7 +14,46 @@ window.addEventListener('resize', () => {
     resizeTimer = setTimeout(() => {
         document.body.classList.remove('resize-animation-stopper');
     }, 300);
-});                
+});   
+
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.site-header');
+    const navToggle = document.querySelector('.nav-toggle');
+    const mainNavbar = document.querySelector('.main-navbar');
+    
+    navToggle.addEventListener('click', () => {
+        const isOpen = mainNavbar.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    if (!header || !navToggle || !mainNavbar) return;
+
+    const updateHeaderBackground = () => {
+        if (mainNavbar.classList.contains('is-open')){
+            header.classList.add('scrolled');
+            return;
+        }
+
+        if (window.scrollY > 20) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled')
+        }
+    };
+
+    navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        mainNavbar.classList.toggle('is-open');
+
+        updateHeaderBackground();
+    });
+
+    window.addEventListener('scroll', updateHeaderBackground, { passive: true});
+
+    updateHeaderBackground();
+});
+
 
 const menuData = [
     {id: 1, name: "Adobo", category: "main-course", price: 150, image: "imgs/filipino-adobo.webp", description: "Mga hiwa ng manok na pinalambot sa pinaghalong suka, toyo, maraming bawang, paminta, at dahon ng laurel. Dahan-dahang iniluluto sa mahinang apoy hanggang sa kumapit at magmamantika ang masarap na sarsa."},
@@ -37,6 +76,7 @@ function renderMenuItems(items) {
         <div class="menu-item" data-category="${item.category}">
             <img src="${item.image}" alt="${item.name}" loading="lazy">
             <p class="menu-title">${item.name}</p>
+            <p class="description">${item.description}</p>
         </div>
     `).join("");
 }
