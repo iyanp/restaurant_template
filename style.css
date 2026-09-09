@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 body {
@@ -32,6 +31,35 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+section{
+    width: 100%;
+    min-height: 43rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer{
+    background-color: brown;
+    width: 100%;
+}
+
+.section-one { background-image: url(imgs/restaurantbg.webp);}
+.section-two { background-color: antiquewhite;}
+.section-three { background-color: beige; }
+.section-four { background-color: antiquewhite;}
+.section-five { background-color: brown;}
+.section-six { background-color: whitesmoke;}
+.section-seven { background-color: bisque;}
 
 .site-header{
     position: fixed;
@@ -202,7 +230,7 @@ img {
 .home-section{
     display: flex;
     min-height: 43rem;
-    width: min(100%, 1300px);
+    width: min(100%, 1300px); 
     margin-inline: auto;
     justify-content: center;
 }
@@ -211,11 +239,13 @@ img {
     background-color: aqua;
 }
 
+
+   /** width: min(100%, 1300px); **/
+
 .intro-section{
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: pink;
     align-items: center;
 }
 
@@ -250,7 +280,6 @@ img {
 .gallery-section{
     display: flex;
     flex-direction: column;
-    background-color: blueviolet;
 }
 
 .gallery-header{
@@ -306,8 +335,6 @@ img {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    background-color: chartreuse;
-    width: 100%;
     padding: 10px;
 }
 
@@ -334,7 +361,6 @@ img {
 .menu-section{
     display: flex;
     flex-direction: column;
-    background-color: aquamarine;
     padding: 2rem;
 }
 
@@ -359,12 +385,10 @@ img {
 .why-section{
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 .section-header{
     width: 100%;
-    color: green;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -524,7 +548,6 @@ img {
 .contact-section{
     display: flex;
     flex-direction: column;
-    background-color: pink;
 }
 
 .footer-container{

@@ -9,21 +9,72 @@
 
 <body>
     <header class="site-header">
-        <a href="" class="logo">Kawa at Kalan</a>
+        <div class="header-container">
+            <a href="" class="logo">Kawa at Kalan</a>
 
-        <nav class="main-navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="main-nav-button"> Reserve a table</div>
-        </nav>
+            <!-- Mobile toggle button-->
+            <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="nav-toggle">
+                   X
+                </span>
+            </button>
+
+            <nav class="main-navbar">
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="about.html">About</a></li>
+                    <li><a class="nav-link" href="#menu">Menu</a></li>
+                    <li><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="main-nav-button">Reserve a table</div>
+            </nav>
+
+            
+        </div>
+        <script src="script.js" defer></script>
     </header>
-    <main>
+    <main >
+         <section class="section-one">
+            <div class="home-section intro-section">
+                <div class="containerA">
+                    <p>Tungkol sa Kawa at Kalan</p>
+                    <h1>Maliit na kusina, malaking puso.</h1>
+                    <p>Kilalanin ang mga taong nasa likod ng kalan, ang tradisyong aming isinasabuhay, at ang bawat maliliit na detalye't pagnanasa na bumubuo sa bawat putaheng aming inihahain.</p>
+                </div>
+            </div>
+         </section>
 
+        <section class="section-two">
+            <div class="home-section story-section">
+                <img src="pic.webp" alt="photo" class="story-image">
+                <div class="story-content">
+                    <p class="text">Ang Aming Kuwento</p>
+                    <br>
+                    <h3 class="title">Mula sa simpleng kubo hanggang sa inyong hapag.</h3>
+                    <br>
+                    <p class="description">Ngayon, isa na kaming ganap na restawran, ngunit bitbit pa rin namin ang panuntunan mula unang araw: maghain lamang ng pagkaing buong-puso naming ipapakain sa aming sariling pamilya.</p>
+                    <br>
+                    <p class="description">Lahat ng aming putahe ay sariwang inihahanda araw-araw. Mula sa mabagal na pagpapakulo ng sabaw sa dambuhalang kawa hanggang sa pagpapalambot ng karne sa kalang de-luad, bawat plato ay pamanang lasa na ipinagmamalaki naming ihain sa inyo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-two">
+            <div class="home-section story-section">
+                <img>
+                <div class="">
+                    <p class="text">Ang aming hangad.</p>
+                    <br>
+                    <h3 class="title">Ipagramdam ang init ng tahanan — sa bawat platong inihahain.</h3>
+                    <br>
+                    <p>May payak kaming layunin sa Kawa at Kalan: ang magluto ng tapat at totoong pagkaing Pilipino mula sa pinakasariwang sangkap, at isilbi ito sa hapag kung saan walang sinumang nagmamadali.</p>
+                    <br>
+                    <p>Walang pagkukunwari. Tanging ang init ng kalan, ang sarap ng tradisyon, at ang pagmamahal ng isang pamilya sa bawat hain.</p>
+                </div>
+            </div>
+
+        </section>
     </main>
     
     <footer>
