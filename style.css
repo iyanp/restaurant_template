@@ -61,6 +61,10 @@ footer{
 .section-six { background-color: whitesmoke;}
 .section-seven { background-color: bisque;}
 
+.section-one-about {}
+
+.section-one-menu {}
+
 .site-header{
     position: fixed;
     top: 0;
