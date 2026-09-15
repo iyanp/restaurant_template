@@ -9,19 +9,27 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
+a{
+    font-family: 'Proza Libre', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+}
 
 p{
-    font-family: Arial, sans-serif;
+    font-family: 'Proza Libre', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
 }
 
 h1{
-    font-family: poppins,'Times New Roman', Times, serif;
-    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 
 h3{
-    font-family: poppins,'Times New Roman', Times, serif;
-    font-style: italic;
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 p, h1, h3{
     overflow-wrap: break-word;
@@ -53,7 +61,60 @@ footer{
     width: 100%;
 }
 
-.section-one { background-image: url(imgs/restaurantbg.webp);}
+.button-wrapper-one{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Proza Libre', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+
+    padding: 0.8rem 1.2rem;
+    border: none;
+    cursor: pointer;
+    background-color: #59402B;
+    border-radius: 10px;
+
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+}
+
+.button-wrapper-one:hover{
+    background-color: #513721;
+    transform: translateY(-1px);
+}
+
+.button-wrapper-two{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Proza Libre', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+
+    padding: 1rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: #CB9F72;
+    border-radius: 10px;
+
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+}
+
+.button-wrapper-two:hover{
+    background-color: #c87f37;
+}
+
+.button-wrapper-three{
+
+}
+
+.section-one { background-image: linear-gradient(rgba(0, 0, 0 ,0.5), rgba(0, 0, 0, 0.5)), url(imgs/restaurantbg.webp);}
 .section-two { background-color: antiquewhite;}
 .section-three { background-color: beige; }
 .section-four { background-color: antiquewhite;}
@@ -64,6 +125,10 @@ footer{
 .section-one-about {}
 
 .section-one-menu {}
+
+.section-one-gallery {}
+
+.section-one-contact {}
 
 .site-header{
     position: fixed;
@@ -95,7 +160,10 @@ footer{
     grid-template-columns: 1fr auto;
     align-items: center;
     gap: 1rem;
+}
 
+.header-container a{
+    color: white;
 }
 
 .logo{
@@ -135,6 +203,8 @@ footer{
     color: aquamarine;
 }
 
+
+/** Reference Button **/ 
 .main-nav-button{
     color: white;
     font-weight: bold;
@@ -257,15 +327,35 @@ footer{
     padding: 10px;
 }
 
-.button-wrapper{
+.containerA p{
+    color: white;
+    font-size: 1.3rem;
+}
+
+.tagline{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tagline h3{
+    font-size: 3.9rem;
+}
+
+.line1{
+    color: white;;
+}
+
+.line2{
+    color: #CB9F72;
+}
+
+.button-container{
     display: flex;
     justify-content: center;
     gap: 30px;
     padding: 10px;
-}
-
-.button-wrapper button{
-    padding: 5px;
 }
 
 .containerB{
@@ -275,6 +365,10 @@ footer{
     justify-content: space-between;
     text-align: center;
     gap: 1rem;
+}
+
+.containerB p{
+    color: #A4AAA3;
 }
 
 .containerB p{
