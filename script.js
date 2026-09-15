@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateHeaderBackground();
 });
-s
+
 
 const menuData = [
     {id: 1, name: "Adobo", category: "main-course", price: 150, image: "imgs/filipino-adobo.webp", description: "Mga hiwa ng manok na pinalambot sa pinaghalong suka, toyo, maraming bawang, paminta, at dahon ng laurel. Dahan-dahang iniluluto sa mahinang apoy hanggang sa kumapit at magmamantika ang masarap na sarsa."},
