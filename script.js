@@ -1,10 +1,18 @@
 // Mobile view toggle button
 const navToggle = document.querySelector('.nav-toggle');
 const mainNavbar = document.querySelector('.main-navbar');
+const hamMenu = document.querySelector('.ham-menu');
 
 navToggle.addEventListener('click', () => {
     const isOpen = mainNavbar.classList.toggle('is-open');
     navToggle.setAttribute('aria-expanded', isOpen);
+});
+
+//Menu button transition
+hamMenu.addEventListener('click', () => {
+    const navOpen = mainNavbar.classList.toggle('nav-open');
+    hamMenu.classList.toggle('active');
+    navOpen.classList.toggle('active');
 });
 
 let resizeTimer;
