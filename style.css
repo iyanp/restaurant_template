@@ -4,26 +4,44 @@
     box-sizing: border-box;
 }
 
+:root{
+    /** ayusin pa to**/
+
+    /** section header paragraph values **/
+    --font-family-heading-secheader: 'Montserrat', sans-serif;
+    --font-weight-heavy: 800;
+    --font-size-secheader: x-small;
+    --letter-spacing-wide-secheader: 0.18rem;
+
+
+    --color-primary-brown: #59402B;
+    --color-secondary-brown: #453121;
+    --color-hover-primary: #513721;
+}
+
 body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
 a{
-    font-family: 'Proza Libre', sans-serif;
-    font-weight: 400;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-weight: 500;
     line-height: 1.7;
+    letter-spacing: -0.01rem;
 }
 
 p{
-    font-family: 'Proza Libre', sans-serif;
-    font-weight: 400;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-weight: 500;
     line-height: 1.7;
+    letter-spacing: -0.01rem;
 }
 
 h1{
     font-family: 'Playfair Display', serif;
     font-weight: 700;
+    color: var(--color-secondary-brown);
 }
 
 h3{
@@ -61,6 +79,10 @@ footer{
     width: 100%;
 }
 
+svg.bi {
+    vertical-align: middle;
+}
+
 /** ========== ICON SECTION ========== **/
 .icon{
     display: inline-block;
@@ -95,7 +117,7 @@ footer{
     padding: 0.8rem 1.2rem;
     border: none;
     cursor: pointer;
-    background-color: #59402B;
+    background-color: var(--color-primary-brown);
     border-radius: 10px;
 
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -103,7 +125,7 @@ footer{
 }
 
 .button-wrapper-one:hover{
-    background-color: #513721;
+    background-color: var(--color-hover-primary);
 }
 
 .button-wrapper-two{
@@ -178,6 +200,11 @@ footer{
 
 /** ========== END OF SECTIONS BACKGROUND IMAGE/COLOR ========== **/
 
+
+/** ========== FONTSTYLE SECTION ==========**/
+
+
+/**======== END OF OTHER FONTSTYLE SECTION ===========**/
 .site-header{
     position: fixed;
     top: 0;
@@ -201,7 +228,7 @@ footer{
 .site-header.scrolled .nav-link.active,
 .site-header.scrolled .nav-link:hover,
 .site-header.scrolled .nav-link:focus-visible{
-    color:#CB9F72;
+    color:#59402B;
 }
 
 .site-header.scrolled .nav-toggle{
@@ -259,7 +286,7 @@ footer{
 .nav-link{
     text-decoration: none;
     color: black;
-    font-weight: bold;
+    font-weight: 500;
     padding: 0.5rem 0;
     transition: color 0.2s ease;
 }
@@ -403,6 +430,7 @@ footer{
     width: min(100%, 1300px); 
     margin-inline: auto;
     justify-content: center;
+    padding: 2.5rem;
 }
 
 .about-section{
@@ -475,7 +503,6 @@ footer{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem;
 }
 
 .gallery-header a{
@@ -483,15 +510,28 @@ footer{
     color: black;
 }
 
+.gallery-header p{
+    text-align: left;
+    font-family: var(--font-family-heading-secheader);
+    font-weight: var(--font-weight-heavy);
+    font-size: var(--font-size-secheader);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide-secheader);
+    color: var(--color-primary-brown);
+}
+
 .gallery-paratop{
     flex-basis: 100%;
     margin-bottom: 0.5rem;
-    text-align: left;
 }
 
 .gallery-heading,
 .gallery-parabottom{
     margin: 0;
+}
+
+.gallery-parabottom a{
+    color:#59402B;
 }
 
 .gallery-grid{
@@ -554,9 +594,9 @@ footer{
 
 .story-section{
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 1.5rem;
-    padding: 10px;
 }
 
 .story-image{
@@ -571,12 +611,33 @@ footer{
     text-align: left;
 }
 
-.story-content p{
-    font-size: 1rem;
+.story-content p:nth-of-type(1){
+    font-family: var(--font-family-heading-secheader);
+    font-weight: var(--font-weight-heavy);
+    font-size: var(--font-size-secheader);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide-secheader);
+    color: var(--color-primary-brown);
 }
 
-.story-content h3{
-    font-size: 3rem;
+@media (max-width: 1100px){
+    .story-section{
+        flex-direction: column;
+    }
+
+    .story-image{
+        width: 100%;
+    }
+
+    .story-content{
+        max-width: 100%;
+    }
+}
+
+
+
+.story-content h1{
+    font-size: 2rem;
 }
 
 .menu-section{
@@ -602,7 +663,6 @@ footer{
     color: black;
 }
 
-/** This one is typo, correct is section not seciton**/
 .why-section{
     display: flex;
     flex-direction: column;
@@ -613,6 +673,21 @@ footer{
     padding: 1.5rem;
     margin-bottom: 1.5rem;
 }
+
+.section-header p:nth-of-type(1){
+    font-family: var(--font-family-heading-secheader);
+    font-weight: var(--font-weight-heavy);
+    font-size: var(--font-size-secheader);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide-secheader);
+    color: var(--color-primary-brown);
+}
+
+.section-header p:nth-of-type(2){
+    color: #59402B;
+}
+
+
 
 .why-content{
     display: grid;
