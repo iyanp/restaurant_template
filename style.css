@@ -114,15 +114,24 @@ svg.bi {
 
 /** ========== ICON SECTION ========== **/
 .icon{
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke: 0;
-    stroke: currentColor;
+    width: 20px;
+    height: 20px;
+    stroke: white;
     fill: currentColor;
-    vertical-align: -0.125em;
+    padding-left: 0.3rem;
 }
 
+.icon-medium{
+    padding: .5rem;
+    width: 90px;
+    height: 90px;
+    stroke: white;
+    fill: var(--color-primary-white);
+}
+
+
+
+/** bagohin pa to **/
 .icon--sm { width: 0.875; height: 0.875em; }
 .icon--lg { width: 1.5em; height: 1.5em; }
 .icon--xl { width: 2em; height: 2em;}
@@ -211,7 +220,7 @@ svg.bi {
 
 
 /** ========== SECTIONS BACKGROUND IMAGE/COLOR ========== **/
-.section-one { background-image: linear-gradient(rgba(0, 0, 0 ,0.6), rgba(0, 0, 0, 0.6)), url(imgs/restaurantbg.webp);}
+.section-one { background-image: linear-gradient(rgba(0, 0, 0 ,0.6), rgba(0, 0, 0, 0.6)), url(assets/imgs/restaurantbg.webp);}
 .section-two { background-color: antiquewhite;}
 .section-three { background-color: beige; }
 .section-four { background-color: antiquewhite;}
@@ -728,22 +737,25 @@ svg.bi {
 
 .info-box{
     display: grid;
-    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     text-align: left;
     padding: 1rem;
-    background-color: var(--color-lite-brown);
+    background-color: var(--color-white-three);
 
     border: 1px solid var(--color-secondary-white);
     border-radius: 10px;
     overflow: hidden;
 }
 
-.icon-ws{
-    background-color: brown;
-    border-radius: 10%;
-    width: 3.5rem;
-    height: 3.5rem;
-    padding: 10px;
+.icon-container{
+    display: flex;
+    width: 50%;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--color-lite-brown);
+    border-radius: 1.5rem;
+    margin: 1rem 0 1rem 0;
+    padding: 0.5rem 0 0.5rem 0;
 }
 
 .menu-container{
