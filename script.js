@@ -82,9 +82,10 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 function renderMenuItems(items) {
     menuGrid.innerHTML = items.map(item => `
         <div class="menu-item" data-category="${item.category}">
-            <img src="${item.image}" alt="${item.name}" loading="lazy">
+            <img class="menu-photo" src="${item.image}" alt="${item.name}" loading="lazy">
             <p class="menu-title">${item.name}</p>
-            <p class="description">${item.description}</p>
+            <p class="menu-desc">${item.description}</p>
+            <p class="menu-price">${item.price}</p>
         </div>
     `).join("");
 }
