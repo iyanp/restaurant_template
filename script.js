@@ -138,3 +138,16 @@ btns.forEach(btn => {
         });
     });
 });
+
+//reservation form
+function toggleModal(show) {
+    const modal = document.getElementById('modalOverlay');
+    modal.style.display = show ? 'flex' : 'none';
+}
+
+window.onclick = function(event) {
+    const modal = this.document.getElementById('modalOverlay');
+    if (event.target === modal) {
+        toggleModal(false)
+    }
+};

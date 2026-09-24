@@ -62,7 +62,7 @@
                             <use href="assets/icons/sprite.svg#icon-arrow-right"></use>
                         </svg>
                     </button>
-                    <button class="button-wrapper-three">Mag-reserba ng Mesa 
+                    <button class="button-wrapper-three" onclick="toggleModal(true)">Mag-reserba ng Mesa 
                         <svg class="icon">
                             <use href="assets/icons/sprite.svg#icon-calendar"></use>
                         </svg>
@@ -73,6 +73,13 @@
                     <p>4.8 sa Google (1,200+ na review)</p>
                     <p>Pamanang Lutong Pinoy Simula 2022.</p>
                     <p>Araw-araw na sariwang aning sangkap</p>
+                </div>
+            </div>
+
+            <div id="modalOverlay" class="modal-overlay">
+                <div class="modal-content">
+                    <button class="close-formBtn" onclick="toggleModal(false)">&times;</button>
+                    <iframe src="reservation_form.html"></iframe>
                 </div>
             </div>
          </section>
@@ -373,6 +380,7 @@
         <div class="main-footer">
             <div class="footer-socials">
                 <h3>Kawa at Kalan</h3>
+                <br>
                 <p>Makabagong hain, mga sandali na tatatak sa alaala. Sariwang sangkap, mainit na pagtanggap, at mga lasang babalik-balikan mo.</p>
                 <icon>
                     <svg>
@@ -390,9 +398,9 @@
                     </svg>
                 </icon>
             </div>
-
             <div class="footer-links">
-                <p>Quick Links.</p>
+                <h3>Quick Links.</h3>
+                <br>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -403,8 +411,11 @@
 
             <div class="footer-contact">
                 <h3>Contact</h3>
+                <br>
                 <p>Full address information here.</p>
+                <br>
                 <p>0962 888 1111</p>
+                <br>
                 <p>Emailhere@gmail.com</p>
             </div>
 
@@ -412,14 +423,14 @@
                 <h3>Opening hours.</h3>
                 <p>10:00am &mdash; 10pm</p>
                 <p>Lunes &mdash; Biyernes</p>
-                <p>9am &mdash; 11pm</p>
+                <p>9:00am &mdash; 11:00pm</p>
                 <p>Sabado &mdash; Linggo</p>
             </div>
 
         </div>
         <div class="footer-border">
             <div class="final-footer">
-                <p>2026 Kawa & Kalan. All Rights Reserved</p>
+                <p><svg><use href="assets/icons/sprite.svg#copyright-icon"></use></svg>2026 Kawa & Kalan. All Rights Reserved</p>
                 <p>Mula Quezon Province</p>
             </div>
         </div>
