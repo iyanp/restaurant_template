@@ -62,17 +62,23 @@ document.addEventListener('DOMContentLoaded', () => {
     updateHeaderBackground();
 });
 
-
 const menuData = [
-    {id: 1, name: "Adobo", category: "main-course", price: 150, image: "imgs/filipino-adobo.webp", description: "Mga hiwa ng manok na pinalambot sa pinaghalong suka, toyo, maraming bawang, paminta, at dahon ng laurel. Dahan-dahang iniluluto sa mahinang apoy hanggang sa kumapit at magmamantika ang masarap na sarsa."},
-    {id: 2, name: "Sinigang", category: "main-course", price: 180, image: "imgs/sinigang.webp", description: "Malalambot na hiwa ng kasim o liempo ng baboy na nakalubog sa maasim at mainit na sabaw ng sampalok. May kasamang mga sariwang gulay tulad ng kangkong, labanos, sitaw, talong, at siling haba."},
-    {id: 3, name: "Humba", category: "main-course", price: 200, image: "imgs/humba.webp", description: "Malalambot na hiwa ng baboy na niluto sa pinaghalong toyo, suka, bawang, at asukal. May kasamang mga sangkap tulad ng pinya, itlog, at paminta. Ang humba ay kilala sa kanyang matamis at malinamnam na lasa."},
-    {id: 4, name: "Halo-Halo", category: "desserts", price: 120, image: "imgs/halo_halo.jpg"},
-    {id: 5, name: "Turon", category: "desserts", price: 80, image: "imgs/turon.jpg"},
-    {id: 6, name: "Lumpia", category: "appetizers", price: 100, image: "imgs/lumpia.jpg"},
-    {id: 7, name: "Calamares", category: "appetizers", price: 150, image: "imgs/calamares.jpg"},
-    {id: 8, name: "Buko Juice", category: "beverages", price: 60, image: "imgs/buko_juice.jpg"},
-    {id: 9, name: "Sago't Gulaman", category: "beverages", price: 70, image: "imgs/sagot_gulaman.jpg"}
+    {id: 1, name: "Adobong Manok", category: "main-course", price: 150, image: "assets/imgs/foods/chicken_adobo.webp", description: "Manok na inatado sa toyo, suka, bawang, at paminta hanggang sa mag-mantika."},
+    {id: 2, name: "Sinigang na Baboy", category: "main-course", price: 180, image: "assets/imgs/foods/pork_sinigang.webp", description: "Maasim na sabaw ng kasim ng baboy na may kangkong, labanos, talong, at sili."},
+    {id: 3, name: "Humba", category: "main-course", price: 200, image: "assets/imgs/foods/pork_humba.webp", description: "Malambot na liempo sa matamis-tamis na sabaw na may tausi, bulaklak ng saging, at itlog."},
+    {id: 4, name: "Sisig na Baboy", category: "main-course", price: 200, image: "assets/imgs/foods/pork_sisig.webp", description: "Inihaw at tinadtad na mukha ng baboy at atay na may calamansi, sibuyas, sili, at biniyak na itlog sa ibabaw."},
+    {id: 5, name: "Kare-kare", category: "main-course", price: 200, image: "assets/imgs/foods/beef_karekare.webp", description: "Malambot na baka at tuwalya na iniluto sa malasa sabaw ng mani kasama ang mga sariwang gulay, inihahain na may katambal na ginisang bagoong alamang."},
+    {id: 6, name: "Ensaladang Talong", category: "appetizers", price: 120, image: "assets/imgs/foods/es_talong.webp", description: "Inihaw na talong na may kamatis, sibuyas, calamansi, at bagoong."},
+    {id: 7, name: "Lumpiang Shanghai", category: "appetizers", price: 80, image: "assets/imgs/foods/lumpiang_shanghai.webp", description: "Muling pritong lumpiang baboy na may gulay at pampalasa, isinisilbi kasama ang matamis at maasim na saw-sawan."},
+    {id: 8, name: "Espesyal na Palabok", category: "appetizers", price: 80, image: "assets/imgs/foods/palabok.webp", description: "Makapal na bihon na may malinamnam na sarsa ng hipon at atsuete, may ibabaw na chicharon, itlog, at sibuyas na mura."},
+    {id: 9, name: "Tokwa&#39t Baboy", category: "appetizers", price: 80, image: "assets/imgs/foods/tokwaTbaboy.webp", description: "Makapal na bihon na may malinamnam na sarsa ng hipon at atsuete, may ibabaw na chicharon, itlog, at sibuyas na mura."},
+    {id: 10, name: "Achara", category: "appetizers", price: 80, image: "assets/imgs/foods/achara.webp", description: "Atsarang papaya sa matamis na suka, carrots, at bell pepper."},    
+    {id: 11, name: "Puto Bumbong at Bibingka", category: "desserts", price: 80, image: "assets/imgs/foods/pbbingka.webp", description: "Mula sa pugon na kakanin na may niyog, mantikilya, at muscovado."},
+    {id: 12, name: "Leche flan", category: "desserts", price: 80, image: "assets/imgs/foods/leche_flan.webp", description: "Malambot at pino na caramel custard."},
+    {id: 13, name: "Sago&#39t gulaman", category: "desserts", price: 80, image: "assets/imgs/foods/sagot-gulaman.webp", description: "Malamig na arnibal na may pandan, sago, at gulaman."},
+    {id: 14, name: "Sariwang kalamansi at pipino", category: "beverages", price: 80, image: "assets/imgs/foods/kalamansi.webp", description: "Piniga na kalamansi na may hiniwang pipino at honey."},
+    {id: 15, name: "Buko pandan", category: "beverages", price: 80, image: "assets/imgs/foods/buko_pandan.webp", description: "Sabaw ng buko na may kayod na buko, gulaman na pandan, at gatas."}
+    
     //change this content
 ];
 
@@ -103,6 +109,7 @@ function setUpFilterListeners() {
 
             menuItems.forEach(item => { 
                 const itemCategory = item.getAttribute('data-category');
+                let count = 0;
 
                 if (selectedCategory === 'all' || itemCategory === selectedCategory) {
                     item.classList.remove('hide');
