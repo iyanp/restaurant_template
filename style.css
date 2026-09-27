@@ -265,9 +265,17 @@ iframe{
 .icon{
     width: 20px;
     height: 20px;
-    stroke: var(--color-primary-white);
+    stroke: currentColor;
     fill: currentColor;
     padding-left: 0.3rem;
+}
+
+.icon--sm{
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    justify-self: center;
+    align-self: center;
 }
 
 .icon-medium{
@@ -283,7 +291,6 @@ iframe{
 
 
 /** bagohin pa to **/
-.icon--sm { width: 0.875; height: 0.875em; }
 .icon--lg { width: 1.5em; height: 1.5em; }
 .icon--xl { width: 2em; height: 2em;}
 
@@ -692,11 +699,6 @@ iframe{
     justify-content: space-between;
 }
 
-.gallery-header a{
-    text-decoration: none;
-    color: var(--color-primary-black);
-}
-
 .gallery-header p{
     text-align: left;
     font-family: var(--font-family-one);
@@ -718,6 +720,9 @@ iframe{
 }
 
 .gallery-parabottom a{
+    display: flex;
+    align-self: center;
+    text-decoration: none;
     color:var(--color-primary-brown);
 }
 
@@ -778,7 +783,6 @@ iframe{
     font-size: small;
 }
 
-
 .story-section{
     display: flex;
     flex-direction: row;
@@ -829,7 +833,13 @@ iframe{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 2rem;
+    padding: 2rem; 
+    gap: 1.5rem;
+}
+
+.menu-section .button-wrapper-two{
+    width: 40%;
+    align-self: center;
 }
 
 .story-item{
@@ -942,14 +952,14 @@ iframe{
     color: var(--color-primary-white);
 }
 
-.menu-grid{
+.index-menu-grid{
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
 }
 
-@media (max-width: 600px){
-    .menu-grid {
+@media (max-width: 800px){
+    .index-menu-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -957,12 +967,13 @@ iframe{
 .menu-item{
     display: grid;
     grid-template-columns: 40% 40% auto;
-    grid-template-rows: 20% auto;
+    grid-template-rows: auto auto;
     grid-template-areas:
         "img title price"
         "img desc desc";
 
     background-color: var(--color-transparent-blur);
+    row-gap: 0.3rem;
     
 
     border-radius: 8px;
@@ -1183,6 +1194,8 @@ iframe{
     justify-content: right;
     align-items: center;
 }
+
+/** ======= ABOUT PAGE ======= **/
 
 
 

@@ -15,7 +15,11 @@
             <!-- Mobile toggle button-->
             <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="nav-toggle">
-                   X
+                    <div class="ham-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </span>
             </button>
 
@@ -27,12 +31,12 @@
                     <li><a class="nav-link" href="#gallery">Gallery</a></li>
                     <li><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
-                <div class="button-wrapper-one">Reserve a table</div>
+                <div class="button-wrapper-one" onclick="toggleModal(true)">Reserve a table</div>
             </nav>
         </div>
         <script src="script.js" defer></script>
     </header>
-    <main>
+    <main id="home">
         <section class="section-one">
             <div class="home-section intro-section">
                 <div class="containerA">
@@ -44,40 +48,80 @@
         </section>
 
         <section class="section-two">
-            <div class="menu-container">
-                <div class="filter-nav">
-                    <button class="filter-btn active" data-filter="all">Lahat</button>
-                    <button class="filter-btn" data-filter="appetizers">Pang-umpisa</button>
-                    <button class="filter-btn" data-filter="main-course">Pangunahing Ulam</button>
-                    <button class="filter-btn" data-filter="desserts">Panghimagas</button>
-                    <button class="filter-btn" data-filter="beverages">Inumin</button>
+            <div class="menu-section">
+                <div class="menu-container">
+                    <div class="filter-nav">
+                        <button class="filter-btn active" data-filter="all">Lahat</button>
+                        <button class="filter-btn" data-filter="appetizers">Pang-umpisa</button>
+                        <button class="filter-btn" data-filter="main-course">Pangunahing Ulam</button>
+                        <button class="filter-btn" data-filter="desserts">Panghimagas</button>
+                        <button class="filter-btn" data-filter="beverages">Inumin</button>
+                    </div>
                 </div>
+                <div class="menu-grid" id="menuGrid"></div>
             </div>
-            <div class="menu-grid" id="menuGrid"></div>
+
         </section>
 
     </main>
 
     <footer>
-        <div class="footer-container">
-            <div class="">
+        <div class="main-footer">
+            <div class="footer-socials">
                 <h3>Kawa at Kalan</h3>
-                <p>Motto</p>
-                <icon></icon>
-                <icon></icon>
-                <icon></icon>
+                <br>
+                <p>Makabagong hain, mga sandali na tatatak sa alaala. Sariwang sangkap, mainit na pagtanggap, at mga lasang babalik-balikan mo.</p>
+                <icon>
+                    <svg>
+                        <use href="assets/icons/sprite.svg#insta-icon"></use>
+                    </svg>
+                </icon>
+                <icon>
+                    <svg>
+                        <use href="assets/icons/sprite.svg#fb-icon"></use>
+                    </svg>
+                </icon>
+                <icon>
+                    <svg>
+                        <use href="assets/icons/sprite.svg#tiktok-icon"></use>
+                    </svg>
+                </icon>
             </div>
-            <div class="">
-                <h3>Contact</h3>
-                <p>Full address information here.</p>
-                <p>0962 888 1111</p>
-                <p>Emailhere@gmail.com</p>
-            </div>
-            <div class="">
-                <h3>Opening hours.</h3>
-                <p>1:00 to 12:00</p>
+            <div class="footer-links">
+                <h3>Quick Links.</h3>
+                <br>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
             </div>
 
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <br>
+                <p>Full address information here.</p>
+                <br>
+                <p>0962 888 1111</p>
+                <br>
+                <p>Emailhere@gmail.com</p>
+            </div>
+
+            <div class="footer-opening">
+                <h3>Opening hours.</h3>
+                <p>10:00am &mdash; 10pm</p>
+                <p>Lunes &mdash; Biyernes</p>
+                <p>9:00am &mdash; 11:00pm</p>
+                <p>Sabado &mdash; Linggo</p>
+            </div>
+
+        </div>
+        <div class="footer-border">
+            <div class="final-footer">
+                <p><svg><use href="assets/icons/sprite.svg#copyright-icon"></use></svg>2026 Kawa & Kalan. All Rights Reserved</p>
+                <p>Mula Quezon Province</p>
+            </div>
         </div>
     </footer>
 </body>

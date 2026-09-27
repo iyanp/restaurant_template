@@ -8,7 +8,7 @@ navToggle.addEventListener('click', () => {
     navToggle.setAttribute('aria-expanded', isOpen);
 });
 
-//Menu button transition
+//Navigation button transition
 hamMenu.addEventListener('click', () => {
     const navOpen = mainNavbar.classList.toggle('nav-open');
     hamMenu.classList.toggle('active');
@@ -62,6 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
     updateHeaderBackground();
 });
 
+//Menu list
+console.log(document.querySelectorAll('.filter-btn'));
+console.log(document.querySelectorAll('#menuGrid [data-category]'));
+
 const menuData = [
     {id: 1, name: "Adobong Manok", category: "main-course", price: 150, image: "assets/imgs/foods/chicken_adobo.webp", description: "Manok na inatado sa toyo, suka, bawang, at paminta hanggang sa mag-mantika."},
     {id: 2, name: "Sinigang na Baboy", category: "main-course", price: 180, image: "assets/imgs/foods/pork_sinigang.webp", description: "Maasim na sabaw ng kasim ng baboy na may kangkong, labanos, talong, at sili."},
@@ -78,40 +82,69 @@ const menuData = [
     {id: 13, name: "Sago&#39t gulaman", category: "desserts", price: 80, image: "assets/imgs/foods/sagot-gulaman.webp", description: "Malamig na arnibal na may pandan, sago, at gulaman."},
     {id: 14, name: "Sariwang kalamansi at pipino", category: "beverages", price: 80, image: "assets/imgs/foods/kalamansi.webp", description: "Piniga na kalamansi na may hiniwang pipino at honey."},
     {id: 15, name: "Buko pandan", category: "beverages", price: 80, image: "assets/imgs/foods/buko_pandan.webp", description: "Sabaw ng buko na may kayod na buko, gulaman na pandan, at gatas."}
-    
-    //change this content
 ];
 
+//DOM ELEMENTS
 const menuGrid = document.getElementById('menuGrid');
 const filterButtons = document.querySelectorAll('.filter-btn');
 
-function renderMenuItems(items) {
+function getIndexPageItems(data, itemsPerCategory = 2) {
+    const grouped = data.reduce((acc, item) => {
+        if (!acc[item.category]) {
+            acc[item.category] = [];
+        }
+        if (acc[item.category].length < itemsPerCategory) {
+            acc[item.category].push(item);
+        }
+        return acc;
+    }, {});
+
+    return Object.values(grouped).flat();
+}
+
+//Index page menu list
+function renderIndexMenuItems(items){
+    if (!menuGrid) return;
+
     menuGrid.innerHTML = items.map(item => `
         <div class="menu-item" data-category="${item.category}">
             <img class="menu-photo" src="${item.image}" alt="${item.name}" loading="lazy">
             <p class="menu-title">${item.name}</p>
             <p class="menu-desc">${item.description}</p>
             <p class="menu-price">${item.price}</p>
-        </div>
+        </div> 
     `).join("");
 }
 
-function setUpFilterListeners() {
+//full menu list
+function renderFullMenuItems(items) {
+    if (!menuGrid) return;
+
+    menuGrid.innerHTML = items.map(item => `
+        <div class="menu-item" data-category="${item.category}">
+            <img class="menu-photo" src="${item.image}" alt="${item.name}" loading="lazy">
+            <p class="menu-title">${item.name}</p>
+            <p class="menu-desc">${item.description}</p>
+            <p class="menu-price">${item.price}</p>
+        </div>        
+    `).join("");
+}                                                                                       
+                       
+function setUpFilterListener() {
+    if (!filterButtons.length) return; 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            const selectedCategory = button.getAttribute('data-filter');
+            const indexSelectedCategory = button.getAttribute('data-filter');
 
             const menuItems = document.querySelectorAll('.menu-item');
 
-            menuItems.forEach(item => { 
+            menuItems.forEach(item => {
                 const itemCategory = item.getAttribute('data-category');
-                let count = 0;
 
-                if (selectedCategory === 'all' || itemCategory === selectedCategory) {
+                if (indexSelectedCategory === 'all' || itemCategory === indexSelectedCategory ){
                     item.classList.remove('hide');
                 } else {
                     item.classList.add('hide');
@@ -121,9 +154,21 @@ function setUpFilterListeners() {
     });
 }
 
-renderMenuItems(menuData);
-setUpFilterListeners();
+document.addEventListener('DOMContentLoaded', () => {
+    const isIndexPage = document.body.id === 'index-page' || window.location.pathname.includes('index.html') || window.location.pathname === '/';
 
+    if (isIndexPage) {
+        const limitedData = getIndexPageItems(menuData, 2);
+        renderIndexMenuItems(limitedData);
+    } else {
+        renderFullMenuItems(menuData);
+    }
+
+    setUpFilterListener();
+});
+
+
+//customer reviews
 const btns = document.querySelectorAll('.tab-btn');
 const tabs = document.querySelectorAll('.content-tab');
 
@@ -145,6 +190,7 @@ btns.forEach(btn => {
         });
     });
 });
+
 
 //reservation form
 function toggleModal(show) {
