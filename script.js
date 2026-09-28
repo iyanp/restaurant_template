@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 console.log(document.querySelectorAll('.filter-btn'));
 console.log(document.querySelectorAll('#menuGrid [data-category]'));
 
+
 const menuData = [
     {id: 1, name: "Adobong Manok", category: "main-course", price: 150, image: "assets/imgs/foods/chicken_adobo.webp", description: "Manok na inatado sa toyo, suka, bawang, at paminta hanggang sa mag-mantika."},
     {id: 2, name: "Sinigang na Baboy", category: "main-course", price: 180, image: "assets/imgs/foods/pork_sinigang.webp", description: "Maasim na sabaw ng kasim ng baboy na may kangkong, labanos, talong, at sili."},
@@ -120,6 +121,7 @@ function renderIndexMenuItems(items){
 function renderFullMenuItems(items) {
     if (!menuGrid) return;
 
+    /** 
     menuGrid.innerHTML = items.map(item => `
         <div class="menu-item" data-category="${item.category}">
             <img class="menu-photo" src="${item.image}" alt="${item.name}" loading="lazy">
@@ -127,24 +129,42 @@ function renderFullMenuItems(items) {
             <p class="menu-desc">${item.description}</p>
             <p class="menu-price">${item.price}</p>
         </div>        
+    `).join("");*/
+
+    //figure class photo-card is the problem
+
+    menuGrid.innerHTML = items.map(item => `
+        <div class="photo-card" data-category="${item.category}">
+            <img src="${item.image}" alt="${item.name}" loading="lazy">
+            <div class="photo-card-desc">
+                <h3>${item.name}</h3>
+                <p class="pc-price">${item.price}</p>
+                <p class="pc-desc">${item.description}</p>
+            </div>
+        </div>
     `).join("");
 }                                                                                       
                        
 function setUpFilterListener() {
-    if (!filterButtons.length) return; 
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const menuGrid = document.getElementById('menuGrid');
+
+    if (!filterButtons.length || !menuGrid) return; 
+
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
+
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            const indexSelectedCategory = button.getAttribute('data-filter');
+            const selectedCategory = button.getAttribute('data-filter');
 
-            const menuItems = document.querySelectorAll('.menu-item');
+            const menuItems = document.querySelectorAll('[data-category]');
 
             menuItems.forEach(item => {
                 const itemCategory = item.getAttribute('data-category');
 
-                if (indexSelectedCategory === 'all' || itemCategory === indexSelectedCategory ){
+                if (selectedCategory === 'all' || itemCategory === selectedCategory ){
                     item.classList.remove('hide');
                 } else {
                     item.classList.add('hide');

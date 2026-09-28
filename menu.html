@@ -37,18 +37,32 @@
         <script src="script.js" defer></script>
     </header>
     <main id="home">
-        <section class="section-one">
-            <div class="home-section intro-section">
+        <!-- Reservation form (hidden)-->
+        <div id="modalOverlay" class="modal-overlay">
+            <div class="modal-content">
+                <button class="close-formBtn" onclick="toggleModal(false)">&times;</button>
+                <iframe src="reservation_form.html"></iframe>
+            </div>
+        </div>    
+        <section class="section-one-menu">
+            <div class="about-section intro-section">
                 <div class="containerA">
                     <p>Ang Aming Menu</p>
-                    <h1>Bawat putahe, inihanda nang may buong pagmamahal.</h1>
+                    <br>
+                    <br>
+                    <h3>
+                        <span class="tagline1">Bawat putahe,</span>
+                        <span class="tagline2"> nang may buong pagmamahal.</span>
+                    </h3>
+                    <br>
+                    <br>
                     <p>Pumili sa mga kategorya sa ibaba. Pidotin ang napiling pagkain upang makita ang buong detalye at kwento ng lasa.</p>
                 </div>
             </div>
         </section>
 
         <section class="section-two">
-            <div class="menu-section">
+            <div class="home-section menu-section">
                 <div class="menu-container">
                     <div class="filter-nav">
                         <button class="filter-btn active" data-filter="all">Lahat</button>
@@ -58,7 +72,7 @@
                         <button class="filter-btn" data-filter="beverages">Inumin</button>
                     </div>
                 </div>
-                <div class="menu-grid" id="menuGrid"></div>
+                <div class="gallery-grid" id="menuGrid"></div>
             </div>
 
         </section>

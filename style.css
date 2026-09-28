@@ -93,7 +93,7 @@ main {
 
 section{
     width: 100%;
-    min-height: 43rem;
+    min-height: auto;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -309,6 +309,7 @@ iframe{
     font-size: var(--font-size-xxs);
     font-weight: var(--font-weight-lite);
     color: var(--color-primary-white);
+    text-decoration: none;
 
     padding: 0.8rem 1.2rem;
     border: none;
@@ -333,6 +334,7 @@ iframe{
     font-size: var(--font-size-xxs);
     font-weight: var(--font-weight-heavy);
     color: var(--color-primary-brown);
+    text-decoration: none;
 
     padding: 1rem 1.5rem;
     border: none;
@@ -387,9 +389,9 @@ iframe{
 .section-seven { background-color: bisque;}
 .secondary-footer{background-color: var(--color-primary-brown);}
 
-.section-one-about {}
+.section-one-about {background-image: linear-gradient(rgba(0, 0, 0 ,0.6), rgba(0, 0, 0, 0.6)), url(assets/imgs/profiles/chefs.webp);}
 
-.section-one-menu {}
+.section-one-menu {background-image: linear-gradient(rgba(0, 0, 0 ,0.6), rgba(0, 0, 0, 0.6)), url(assets/imgs/foods/foods.webp);}
 
 .section-one-gallery {}
 
@@ -631,7 +633,11 @@ iframe{
 }
 
 .about-section{
-    background-color: aqua;
+    display: flex;
+    min-height: 30rem;
+    width: min(100%, 1300px); 
+    margin-inline: auto;
+    padding: 2.5rem;
 }
 
 .intro-section{
@@ -1011,6 +1017,10 @@ iframe{
 }
 
 .menu-item.hide{
+    display: none !important;
+}
+
+.photo-card.hide{
     display: none !important;
 }
 
