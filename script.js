@@ -200,6 +200,71 @@ btns.forEach(btn => {
 });
 
 
+//Gallery page
+const galleryData = [
+    {id: 1, name: "Anniversary", category: "occasions", image: "assets/imgs/gallery/anniversary.webp"},
+    {id: 2, name: "Pansit", category: "foods", image: "assets/imgs/gallery/food_gallery.webp"},
+    {id: 3, name: "Quality Plating", category: "foods", image: "assets/imgs/gallery/plating.webp"},
+    {id: 4, name: "Restaurant", category: "restaurant", image: "assets/imgs/gallery/res_gallery.webp"},
+    {id: 5, name: "Restaurant", category: "restaurant", image: "assets/imgs/gallery/res_gallery_two.webp"},
+    {id: 6, name: "Restaurant", category: "restaurant", image: "assets/imgs/gallery/res_gallery_three.webp"},
+];
+
+//render items
+function renderGalleryItems(items) {
+    const galleryGrid = document.getElementById('galleryGrid');
+    if (!galleryGrid) return;
+
+    galleryGrid.innerHTML = items.map(item => `
+        <div class="gallery-item" data-category="${item.category}">
+            <img class="gallery-photo" src="${item.image}" alt="${item.name}" loading="lazy">
+            <div class="text-overlay">
+                <p>${item.name}</p>
+            </div>
+        </div>
+    `).join("");        
+}
+
+// filter set up
+function setUpGalleryFilterListener() {
+    const filterContainer = document.getElementById('galleryFilter');
+    const galleryGrid = document.getElementById('galleryGrid');
+
+    if (!filterContainer || !galleryGrid) return;
+
+    filterContainer.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-filter]');
+        if (!button) return;
+
+        const buttons = filterContainer.querySelectorAll('[data-filter]');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const selectedCategory = button.getAttribute('data-filter');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        galleryItems.forEach(item => {
+            const itemCategory = item.getAttribute('data-category');
+            const shouldShow = selectedCategory === 'all' || itemCategory === selectedCategory;
+            item.classList.toggle('hide', !shouldShow);
+        })
+    });
+}
+
+function initGallery() {
+    renderGalleryItems(galleryData);
+    setUpGalleryFilterListener();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGallery);
+} else {
+    initGallery();
+}
+
+//gallery page
+
+
 //reservation form
 function toggleModal(show) {
     const modal = document.getElementById('modalOverlay');
