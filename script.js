@@ -251,9 +251,13 @@ function setUpGalleryFilterListener() {
     });
 }
 
+//Zoom in/ View Page
+
+
 function initGallery() {
     renderGalleryItems(galleryData);
     setUpGalleryFilterListener();
+    setUpLightBox();
 }
 
 if (document.readyState === 'loading') {

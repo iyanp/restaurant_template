@@ -28,7 +28,7 @@
                     <li><a class="nav-link" href="about.html">About</a></li>
                     <li><a class="nav-link" href="menu.html">Menu</a></li>
                     <li><a class="nav-link active" href="gallery.html">Gallery</a></li>
-                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <button class = "button-wrapper-one" onclick="toggleModal(true)">Reserve a table</button>
             </nav>
@@ -42,7 +42,8 @@
                 <button class="close-formBtn" onclick="toggleModal(false)">&times;</button>
                 <iframe src="reservation_form.html"></iframe>
             </div>
-        </div>    
+        </div> 
+
         <section class="section-one-menu">
             <div class="about-section intro-section">
                 <div class="containerA">
@@ -132,5 +133,12 @@
             </div>
         </div>
     </footer>
+
+            <!-- Full view image modal -->
+    <div id="imageModal" class="modal-gallery">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Full View Image">
+        <div id="modalCaption" class="modal-caption"></div>"
+    </div>   
 </body>
 </html>

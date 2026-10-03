@@ -1162,11 +1162,8 @@ iframe{
 }
 
 .gallery-photo:hover{
-    filter: blur(2px);
+    filter: blur(1px);
 }
-
-
-
 
 .gallery-photo.hide{
     display: none !important;
@@ -1174,6 +1171,70 @@ iframe{
 
 .gallery-item.hide{
     display: none !important;
+}
+
+/** Gllery page modal overlay **/
+.modal-gallery{
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--color-transparent-dark);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modal-gallery.open{
+    display: flex !important;
+}
+
+.model-content {
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0 ,0.5);
+    animation: zoomIn 0.25s ease-out;
+}
+
+.modal-caption {
+    margin-top: 16px;
+    color: var(--color-brown-primary);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: var(--color-brown-primary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--color-hover-primary);
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 
