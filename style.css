@@ -403,7 +403,7 @@ iframe{
 
 .section-one-menu {background-image: linear-gradient(rgba(0, 0, 0 ,0.7), rgba(0, 0, 0, 0.8)), url(assets/imgs/foods/foods.webp);}
 
-.section-one-gallery {}
+.section-one-gallery {background-image: linear-gradient(rgba(0, 0, 0,0.7), rgba(0, 0, 0, 0.8)), url(assets/imgs/gallery/gallerybg.webp);}
 
 .section-one-contact {}
 
@@ -842,7 +842,7 @@ iframe{
 }
 
 .story-content h1{
-    font-size: 2rem;
+    font-size: var(--font-size-l);
 }
 
 .menu-section{
@@ -1237,6 +1237,70 @@ iframe{
     }
 }
 
+/** Contact page **/
+.contact-page{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.contact-details{
+    text-align: left;
+}
+
+.contact-details p:nth-of-type(1){
+    font-family: var(--font-family-one);
+    font-weight: var(--font-weight-xxheavy);
+    font-size: var(--font-size-xxxs);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-two);
+    color: var(--color-primary-brown); 
+}
+
+.contact-details h1 {
+    font-size: var(--font-size-l);
+}
+
+.message-form{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4, auto-fit);
+    grid-template-areas: 
+        "g1 g1"
+        "g2 g2"
+        "g3 g3"
+        "button button";
+
+    background-color: var(--color-primary-white);
+    border-radius: 10px;
+    border: 1px solid var(--color-lite-brown);
+    padding: 1.5rem;
+
+    width: 100%;
+}
+
+.message-email{
+    grid-area: g1;
+    display: flex;
+    flex-direction: row;
+}
+
+.message-form .form-group:nth-child(2){
+    grid-area: g2;
+    grid-column: 50%;
+}
+
+.message-form .form-group:nth-child(3){
+    grid-area: g3;
+    grid-column: 50%;
+}
+
+.message-form button{
+    grid-area: button;
+    margin-top: 1rem;
+}
 
 /** Contact **/
 .contact-section{
