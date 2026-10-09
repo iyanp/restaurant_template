@@ -36,10 +36,17 @@
         <script src="script.js" defer></script>        
     </header>
     <main id="home">
+        <!-- Reservation form (hidden)-->
+        <div id="modalOverlay" class="modal-overlay">
+            <div class="modal-content">
+                <button class="close-formBtn" onclick="toggleModal(false)">&times;</button>
+                <iframe src="reservation_form.html"></iframe>
+            </div>
+        </div>         
         <section class="section-one-menu">
             <div class="about-section intro-section">
                 <div class="containerA">
-                    <p>Bumisita sa amin</p>
+                    <p>Makipag-ugnayan</p>
                     <br>
                     <br>
                     <h3>
@@ -51,31 +58,33 @@
 
         <section class="section-two">
             <div class="about-section contact-page">
-                <!-- This to, may problema sa layout maybe just change the class or fix it-->
                 <div class="contact-details">
-                    <p>para 1</p>
-                    <br>
-                    <h1>Heading 1</h1>
-                    <div class="description">description</div>
+                    <div class="contact-header">
+                        <p>Mag-iwan ng mensahe</p>
+                        <h1>Nais naming makarinig mula sa inyo</h1>
+                        <p class="description">Mga katanungan, pribadong kaganapan, puna, o nais lamang bumati &mdash; mag-iwan lamang ng mensahe at tutugunan ka namin sa loob ng isang araw.</p>
+                    </div>
+                    
                     <br>
                     <div class="contact-items">
-                        <svg></svg>
+                        <svg><use href="assets/icons/sprite.svg#location-icon"></use></svg>
                         <p>Lokasyon</p>
                         <p>Quezon Province, PH</p>
                     </div>
-                    <div>
-                        <svg class="icon"><use href="assets/icons/sprite.svg#phone-icon"></use></svg>
+                    <div class="contact-items">
+                        <svg><use href="assets/icons/sprite.svg#phone-icon"></use></svg>
                         <p>Numero</p>
                         <p>0923 456 789</p>
                     </div>
-                    <div>
-                        <svg></svg>
+                    <div class="contact-items">
+                        <svg><use href="assets/icons/sprite.svg#email-icon"></use></svg>
                         <p>Email</p>
                         <p>kawaatkalan@gmail.com</p>
                     </div>
-                    <div>
-                        <svg></svg>
+                    <div class="contact-items">
+                        <svg><use href="assets/icons/sprite.svg#clock-icon"></use></svg>
                         <p>Opening hours</p>
+                        <p>Lunes - Biyernes: 10am to 10pm * Sabado - Linggo: 10am to 11pm</p>
                     </div>
                 </div>
                 <div>
@@ -106,6 +115,12 @@
                     </form>
                 </div>
 
+            </div>
+        </section>
+
+        <section class="section-three">
+            <div>
+                <h3>GOOGLE MAPS</h3>
             </div>
         </section>
 
