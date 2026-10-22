@@ -63,12 +63,27 @@ body {
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    /**
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    **/
 }
+
+@view-transition{
+    navigation: auto;
+}
+
+@keyframes blur-out {
+  to { filter: blur(3px); opacity: 0; }
+}
+@keyframes blur-in {
+  from { filter: blur(3px); opacity: 0; }
+  to { filter: blur(0px); opacity: 1; }
+}
+
+::view-transition-old(root) {
+  animation: 0.4s ease-in both blur-out;
+}
+::view-transition-new(root) {
+  animation: 0.4s ease-out both blur-in;
+}
+
 a, p{
     font-family:var(--font-family-two);
     font-weight: var(--font-weight-medium);
@@ -79,12 +94,14 @@ a, p{
 h1{
     font-family: var(--font-family-three);
     font-weight: var(--font-weight-xheavy);
+    color: var(--color-secondary-brown);
 }
 
 h3{
     font-family: var(--font-family-four);
     font-weight: var(--font-weight-xheavy);
     letter-spacing: var(--letter-spacing-one);
+    color: var(--color-secondary-brown);
 }
 p, h1, h3{
     overflow-wrap: break-word;
@@ -123,7 +140,6 @@ svg.bi {
 }
 
 /**========== POP UP FORM ========= **/
-
 .modal-overlay {
     display: none;
     position: fixed;
@@ -135,15 +151,17 @@ svg.bi {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+
+    animation: 0.4s ease-out both blur-in;
 }
 
 .modal-content {
     background: white;
     border-radius: 8px;
     width: 80%;
-    height: 80%;
+    height: 75%;
     max-width: 480px;
-    max-height: 600px;
+    max-height: 550px;
     position: relative;
     overflow: hidden;
 
@@ -163,16 +181,13 @@ svg.bi {
     cursor: pointer;
     z-index: 1001;
 }
-
-
-/** FIX HOVER **/
 .close-formBtn :hover{
     scale: 10px;
 }
 
 iframe{
     width: 100%;
-    height: 560px;
+    height: 100%;
     border: none;
     display: block;
 }
@@ -235,6 +250,7 @@ iframe{
 
 .booking-form button{
     grid-area: button;
+    margin-top: 1rem;
 }
 
 
@@ -409,7 +425,7 @@ iframe{
 
 .section-one-gallery {background-image: linear-gradient(rgba(0, 0, 0,0.7), rgba(0, 0, 0, 0.8)), url(assets/imgs/gallery/gallerybg.webp);}
 
-.section-one-contact {}
+.section-one-contact {background-image: linear-gradient(rgba(0, 0, 0,0.7), rgba(0, 0, 0, 0.8)), url(assets/imgs/gallery/front_door.webp);}
 
 /** ========== END OF SECTIONS BACKGROUND IMAGE/COLOR ========== **/
 
@@ -872,6 +888,7 @@ iframe{
 .item-number{
     font-size: 2rem;
     font-weight: bold;
+    color: var(--color-secondary-brown);
 }
 
 .item-desc{
@@ -898,6 +915,10 @@ iframe{
 }
 
 .section-header p:nth-of-type(2){
+    color: var(--color-primary-brown);
+}
+
+.section-header p:nth-of-type(3){
     color: var(--color-primary-brown);
 }
 
@@ -1365,6 +1386,10 @@ iframe{
     height: 600px;
     width: 100%;
     border-radius: 30px;
+}
+
+.message-form input{
+    height: 2.5rem;
 }
 
 /** Contact **/
